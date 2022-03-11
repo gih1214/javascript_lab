@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>자바스크립트 공부하기 - 3단계</h1>
+    <hr />
+    <button id="jooho">주호클릭</button>
+    <button id="jaemin">재민클릭</button>
+    <script>
+        function add(n1, n2){
+            alert(n1 + n2);
+        }
+
+        // 익명 함수 사용법 (매개변수에 인수전달이 가능하다.)
+        let buttonDom =document.querySelector("#jooho");
+        buttonDom.addEventListener("click", function (){
+            add(1, 3);
+        });
+
+        // 람다 함수 사용법
+        let buttonDom2 =document.querySelector("#jaemin");
+        buttonDom2.addEventListener("click", ()=>{
+            // add(1, 3);
+            alert(1 + 3);
+        });
+    </script>
+</body>
+
+</html>

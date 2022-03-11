@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red {
+            color: red;
+        }
+        .blue {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>자바스크립트 공부하기 - 2단계</h1>
+    <hr />
+    <button onclick="add(event,1,3)">더하기</button>
+    <button id="ahyun">빼기</button>
+    <script>
+        // 자바스크립트 함수의 매개변수는 선언이 필요없다.
+        // 자바스크립트 함수의 return 있든 없든 신경 안 써도 된다.
+        function add(e, n1, n2){
+            console.log(e);
+            // return n1+n2;
+            console.log(n1+n2);
+        }
+
+        function minus(e){
+            console.log(e);
+            e.target.innerHTML = "빼기아님";
+            e.target.className = "blue";
+            
+            alert("빼기 함수가 실행되었습니다.");
+        }
+
+        let buttonDom = document.querySelector("#ahyun");
+        buttonDom.addEventListener("click", minus);
+
+    </script>
+</body>
+
+</html>

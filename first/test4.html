@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .border_box {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>자바스크립트 공부하기 - 4단계</h1>
+    <hr />
+    <div id="box1" class="border_box">
+        <p>첫번째 글</p>
+    </div>
+    <button id="btn1">첫번째 박스 값 채우기</button>
+    <br /><br />
+
+    <div id="box2" class="border_box">
+        <p>첫번째 글</p>
+    </div>
+    <button id="btn2">두번째 박스 값 채우기</button>
+
+    <script>
+        let list = ["두번째 글", "세번째 글", "네번째 글"];
+        let data = "두번째 글";
+
+        let btn1Dom = document.querySelector("#btn1");
+        btn1Dom.addEventListener("click", (event)=>{
+            let box1Dom = document.querySelector("#box1");
+            let p1Dom = document.createElement("p");
+            // console.log(p1Dom);
+            // console.log("<p></p>")
+            p1Dom.innerHTML = data;
+            box1Dom.appendChild(p1Dom);
+        });
+
+        // 두번째박스 값 채우기 버튼 클릭하면 btn2Dom 찾아서 for문 돌려서 채우기
+        let btn2Dom = document.querySelector("#btn2");
+        // console.log(btn2Dom);
+        btn2Dom.addEventListener("click", (event)=>{
+            let box2Dom = document.querySelector("#box2");
+
+            for(let i of list){
+            let p2Dom = document.createElement("p");
+            // console.log(value);
+            p2Dom.innerHTML = i;
+            box2Dom.appendChild(p2Dom);
+            }
+        });
+    </script>
+</body>
+
+</html>

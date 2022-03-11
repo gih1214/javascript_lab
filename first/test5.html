@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        .item_box {
+            border: 1px solid grey;
+            padding: 5px;
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>통신으로 데이터 가져와서 그림 그리기</h1>
+    <hr />
+    <div id="number-box" class="box">
+
+    </div>
+
+    <button id="download">다운로드</button>
+
+    <script>
+
+        // ajax 사용이유 (1) 부분 리로드 : 통신 효율적(빠름), (2) delete, put 요청 가능
+
+        async function numberFetch() {
+            let response = await fetch("http://localhost:8080/number"); // 10초
+            let responseParse = await response.json();
+
+            let numberBoxDom = document.querySelector("#number-box");
+            for (let i of responseParse) {
+                let pDom = document.createElement("p");
+                pDom.className = "item_box";
+                pDom.innerHTML = `<b>${i}</b>`;
+                numberBoxDom.appendChild(pDom);
+            }
+        }
+
+        let downDom = document.querySelector("#download");
+        downDom.addEventListener("click", () => {
+            numberFetch();
+        });
+    </script>
+</body>
+
+</html>
