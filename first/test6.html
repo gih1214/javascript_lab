@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        async function test() {
+            let response = await fetch("http://localhost:8080/gonggongdata");
+            let responseParse = await response.json(); // json 데이터를 javascript 오브젝트로 파싱
+            console.log(responseParse);
+        }
+
+        test();
+        
+    </script>
+</body>
+
+</html>
