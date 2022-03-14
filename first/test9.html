@@ -20,16 +20,22 @@
         <div id="item-2">반가워!</div>
         <div id="item-1">잘잤어?</div>
     </div>
-
+    
+    <!-- jquery add -->
     <button id="btn-before">before</button>
     <button id="btn-prepend">prepend</button>
-    
+
     <button id="btn-after">after</button>
     <button id="btn-append">append</button>
     
+    <!-- jquery remove/empty -->
+    <button id="btn-remove">remove</button>
+    <button id="btn-empty">empty</button>
+
     <script>
         let count = 1;
-
+        
+        // jquery add 메서드 (before, prepend, after, append)
         $("#btn-before").click(()=>{ // 버튼을 클릭하면
             $("#item-2").before(`<div>비포댓글 ${count}</div>`);
             count++;
@@ -49,7 +55,17 @@
             $("#reply-box").append(`<div>어팬드댓글 ${count}</div>`);
             count++;
         });
+
+        // jquery remove/empty 메서드
+        $("#btn-remove").click(()=>{
+            $("#reply-box").remove(); // 선택된 박스를 통으로 날려버린다.
+        });
+
+        $("#btn-empty").click(()=>{
+            $("#reply-box").empty(); // 선택된 박스의 내부를 날려버린다.
+        });
     </script>
+    
 </body>
 
 </html>
