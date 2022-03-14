@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        div {
+            border: 2px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="reply-box">
+        <div id="item-2">반가워!</div>
+        <div id="item-1">잘잤어?</div>
+    </div>
+
+    <button id="btn-before">before</button>
+    <button id="btn-prepend">prepend</button>
+    
+    <button id="btn-after">after</button>
+    <button id="btn-append">append</button>
+    
+    <script>
+        let count = 1;
+
+        $("#btn-before").click(()=>{ // 버튼을 클릭하면
+            $("#item-2").before(`<div>비포댓글 ${count}</div>`);
+            count++;
+        });
+
+        $("#btn-prepend").click(()=>{
+            $("#reply-box").prepend(`<div>프리팬드댓글 ${count}</div>`);
+            count++;
+        });
+
+        $("#btn-after").click(()=>{
+            $("#item-1").after(`<div>에프터댓글 ${count}</div>`);
+            count++;
+        });
+
+        $("#btn-append").click(()=>{
+            $("#reply-box").append(`<div>어팬드댓글 ${count}</div>`);
+            count++;
+        });
+    </script>
+</body>
+
+</html>
